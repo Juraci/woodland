@@ -1,1 +1,3 @@
-<p>Hello from Orders</p>
+{{#each model as |order| }}
+    <br>Order {{order.id}} for {{order.name}}
+{{/each}}
