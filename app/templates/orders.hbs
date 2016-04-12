@@ -1,3 +1,5 @@
 {{#each model as |order| }}
-    <br>Order {{order.id}} for {{order.name}}
+    {{#link-to "order" order}}
+        <br>Order {{order.id}} for {{order.name}}
+    {{/link-to}}
 {{/each}}
