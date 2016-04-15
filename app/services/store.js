@@ -18,7 +18,7 @@ const orders = [
     }),
     Order.create({id: 1233, name: 'Ana',
                  items: [
-                    LineItem.create({product: products[3], quantity: 1}),
+                    LineItem.create({product: products[2], quantity: 1}),
                  ]
     }),
 ];
@@ -38,5 +38,18 @@ export default Ember.Service.extend({
 
     getProductsById(id) {
         return products.findById(id);
+    },
+
+    newOrder() {
+        return Order.create({
+            items: products.map((product) => {
+                return LineItem.create({ product: product });
+            })
+        });
+    },
+
+    saveOrder(order) {
+         order.set('id', 9999);
+         orders.pushObject(order);
     }
 });
