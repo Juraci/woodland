@@ -1,7 +1,19 @@
 <p>Order {{model.id}} for {{model.name}}</p>
-<ul class='items-list'>
+<table>
+    <tr>
+        <td>Item</td>
+        <td>Quantity</td>
+        <td>Price/Each</td>
+        <td>Cost</td>
+        <td>Cost%</td>
+    </tr>
     {{#each model.items as |item|}}
-        <li>{{item.product.title}}  Quantity: {{item.quantity}}</li>
+        <tr>
+            <td>{{item.title}}</td>
+            <td>{{item.quantity}}</td>
+            <td>{{item.price}}</td>
+            <td>$XX</td>
+            <td>XX%</td>
+        </tr>
     {{/each}}
-</ul>
-<p>The Order is ready! </p>
+</table>
