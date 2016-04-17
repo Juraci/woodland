@@ -1,3 +1,7 @@
-<span class="{{if isImportant 'inportant'}}">
-    {{percentage}}%
+<span class="{{if isImportant 'important'}}" {{action "toggleDetails"}}>
+    {{#if showDetails}}
+        ${{itemPrice}} / ${{orderTotal}}
+    {{else}}
+        {{percentage}}% 
+    {{/if}}
 </span>
