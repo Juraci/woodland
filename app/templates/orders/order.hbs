@@ -13,7 +13,7 @@
             <td>{{item.quantity}}</td>
             <td>${{item.unitPrice}}</td>
             <td>${{item.price}}</td>
-            <td>XX%</td>
+            <td>{{item-percentage itemPrice=item.price orderTotal=model.total}}</td>
         </tr>
     {{/each}}
     <tr>
